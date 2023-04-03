@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,12 +24,32 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
+            this.rb.transform.position = new Vector3(0f, 0f, 0f);
             this.rb.AddForce(this.northExit.transform.position * movementSpeed);
+        }
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            this.rb.AddForce(this.southExit.transform.position * movementSpeed);
         }
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MasterData.count++;
-            SceneManager.LoadScene("DungeonRoom");
+            this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            this.rb.AddForce(this.westExit.transform.position * movementSpeed);
         }
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
+        }
+        
     }
+    private void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject.tag.Equals("Exit"))
+            {
+                MasterData.count++;
+                SceneManager.LoadScene("DungeonRoom");
+            }
+        }
 }
