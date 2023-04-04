@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 430856075}
   - component: {fileID: 430856074}
   m_Layer: 0
-  m_Name: West
+  m_Name: North
   m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,7 +248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430856072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0, z: -0.58}
+  m_LocalPosition: {x: 4.5, y: 0.5, z: -0.26}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -263,7 +263,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430856072}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -348,13 +348,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 617707064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c93a4da7789194181356cba3f368ca, type: 3}
+  m_Script: {fileID: 11500000, guid: bb85a0c5e4ba4794ca6c9a07f80d026a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northExit: {fileID: 810615207}
-  southExit: {fileID: 1814473355}
-  eastExit: {fileID: 980831552}
-  westExit: {fileID: 430856072}
+  northExit: {fileID: 430856072}
+  southExit: {fileID: 980831552}
+  eastExit: {fileID: 810615207}
+  westExit: {fileID: 1814473355}
   movementSpeed: 40
 --- !u!54 &617707066
 Rigidbody:
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 810615210}
   - component: {fileID: 810615209}
   m_Layer: 0
-  m_Name: North
+  m_Name: East
   m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810615207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.08}
+  m_LocalPosition: {x: 0, y: 0.5, z: 4.32}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +586,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810615207}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -717,14 +717,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.52023685, y: -0.47265366, z: 0.5272702, w: 0.47742882}
+  m_LocalRotation: {x: -0.007849299, y: -0.6958637, z: 0.71810824, w: 0.0057165613}
   m_LocalPosition: {x: -0.31, y: 11.969, z: -0.093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 95.625, y: -96.97601, z: -6.8460083}
+  m_LocalEulerAnglesHint: {x: 92.11099, y: -211.464, z: -31.291016}
 --- !u!1 &980831552
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +738,7 @@ GameObject:
   - component: {fileID: 980831555}
   - component: {fileID: 980831554}
   m_Layer: 0
-  m_Name: East
+  m_Name: South
   m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,7 +752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980831552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0, z: 8.74}
+  m_LocalPosition: {x: 4.5, y: 0.5, z: 8.74}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -767,7 +767,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980831552}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 1814473358}
   - component: {fileID: 1814473357}
   m_Layer: 0
-  m_Name: South
+  m_Name: West
   m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814473355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.45, y: 1.14, z: 4.13}
+  m_LocalPosition: {x: 9.01, y: 0.5, z: 4.13}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -953,7 +953,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814473355}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
