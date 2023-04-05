@@ -60,7 +60,8 @@ public class PlayerController : MonoBehaviour
                     MasterData.whereDidIComeFrom = "North";
                     MasterData.count++;
                     SceneManager.LoadScene("DungeonRoom");
-                    this.rb.transform.position = new Vector3(4.5f, 0.5f, 8.74f);
+                    this.rb.transform.position = new Vector3(0f, .5f, 4.5f);
+                    this.rb.AddForce(this.northExit.transform.position * movementSpeed);
                     
                 }
                 else if(other.gameObject == this.southExit)
@@ -68,6 +69,9 @@ public class PlayerController : MonoBehaviour
                     MasterData.whereDidIComeFrom = "south";
                     MasterData.count++;
                     SceneManager.LoadScene("DungeonRoom");
+                    this.rb.transform.position = new Vector3(0f, .5f, -4.5f);
+                    this.rb.AddForce(this.southExit.transform.position * movementSpeed);
+                    
                     
                 }
                 else if(other.gameObject == this.eastExit)
@@ -75,6 +79,8 @@ public class PlayerController : MonoBehaviour
                     MasterData.whereDidIComeFrom = "east";
                     MasterData.count++;
                     SceneManager.LoadScene("DungeonRoom");
+                    this.rb.transform.position = new Vector3(4.5f, .5f, 0f);
+                    this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
                     
                 }
                 else if(other.gameObject == this.westExit)
@@ -82,6 +88,8 @@ public class PlayerController : MonoBehaviour
                     MasterData.whereDidIComeFrom = "west";
                     MasterData.count++;
                     SceneManager.LoadScene("DungeonRoom");
+                    this.rb.transform.position = new Vector3(-4.5f, .5f, 0f);
+                    this.rb.AddForce(this.westExit.transform.position * movementSpeed);
                     
                 }
                 
