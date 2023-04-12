@@ -14,6 +14,8 @@ public class dungeonSetup : MonoBehaviour
     
     void Start()
     {
+        MasterData.setupDungeon();
+        
         if(northOn == false)
         {
             this.northExit.SetActive(false);
@@ -33,5 +35,9 @@ public class dungeonSetup : MonoBehaviour
         
     }
 
-    
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
