@@ -248,7 +248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430856072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0.5, z: -0.26}
+  m_LocalPosition: {x: 4.5, y: 0, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -575,7 +575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810615207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 4.32}
+  m_LocalPosition: {x: 0, y: 0, z: 4.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -756,7 +756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980831552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0.5, z: 8.74}
+  m_LocalPosition: {x: 4.5, y: 0, z: 8.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -962,10 +962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfc5d54bd88193459c684d878a329db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northExit: {fileID: 810615207}
-  southExit: {fileID: 1814473355}
-  eastExit: {fileID: 980831552}
-  westExit: {fileID: 430856072}
+  northExit: {fileID: 430856072}
+  southExit: {fileID: 980831552}
+  eastExit: {fileID: 810615207}
+  westExit: {fileID: 1814473355}
   northOn: 1
   southOn: 1
   eastOn: 1
@@ -1084,7 +1084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814473355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.01, y: 0.5, z: 4.33}
+  m_LocalPosition: {x: 9.01, y: 0, z: 4.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
