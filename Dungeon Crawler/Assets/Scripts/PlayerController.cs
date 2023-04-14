@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
             //this.rb.transform.position = new Vector3(0f, 0f, 0f);
             this.rb.AddForce(this.northExit.transform.position * movementSpeed);
             this.isMoving = true;
-            /*if(northOn == false)
+            if(northOn == false)
             {
                 this.rb.AddForce(this.northExit.transform.position * 0.0f);
             }
-            */
+        
         }
         if(Input.GetKeyDown(KeyCode.DownArrow) && this.isMoving == false)
         {
