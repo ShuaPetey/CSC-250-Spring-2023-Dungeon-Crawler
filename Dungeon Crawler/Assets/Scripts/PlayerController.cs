@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         for(int i = 0; i < 10; i++)
         {
-            print(Random.Range(1, 10));
+            print(Random.Range(1.0f, 10.0f));
         }
         
         this.updateExits();
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
     private void updateExits()
     {
         Room currentRoom = MasterData.p.getCurrentRoom();
-        
+
         if(currentRoom.hasExit("north") == false)
         {
             this.northExit.SetActive(false);
