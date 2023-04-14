@@ -15,10 +15,11 @@ public class dungeonSetup : MonoBehaviour
     void Start()
     {
         MasterData.setupDungeon();
-
+        /*
         if(northOn == false)
         {
             this.northExit.SetActive(false);
+
             //Vector3 oppositeForce = new Vector3(-PlayerController.rb.velocity.x, 0f, 0f) * PlayerController.rb.mass;
             //PlayerController.rb.AddForce(oppositeForce, ForceMode.Impulse);
         }
@@ -34,6 +35,7 @@ public class dungeonSetup : MonoBehaviour
         {
             this.westExit.SetActive(false);
         }
+        */
         
     }
 
