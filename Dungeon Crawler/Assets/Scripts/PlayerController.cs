@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject westStart, eastStart, northStart, southStart;
     public float movementSpeed = 40.0f;
     private bool isMoving;
+    public bool northOn, southOn, eastOn, westOn;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
             //this.rb.transform.position = new Vector3(0f, 0f, 0f);
             this.rb.AddForce(this.northExit.transform.position * movementSpeed);
             this.isMoving = true;
-            /*if(dungeonSetup.northOn == false)
+            /*if(northOn == false)
             {
                 this.rb.AddForce(this.northExit.transform.position * 0.0f);
             }
