@@ -17,10 +17,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 10; i++)
-        {
-            print(Random.Range(1.0f, 10.0f));
-        }
+        float fightChance = Random.Range(1.0f, 10.0f);
+         
+         if(fightChance <= 3.0f)
+         {
+            SceneManager.LoadScene("FightScene");
+         }
+        
         
         this.updateExits();
 
