@@ -55,57 +55,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Room currentRoom = MasterData.p.getCurrentRoom();
-
-        if(Input.GetKeyDown(KeyCode.UpArrow) && this.isMoving == false)
-        {
-            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
-            if(currentRoom.hasExit("north"))
-            {
-                currentRoom.takeExit(MasterData.p, "north");
-                this.rb.AddForce(this.northExit.transform.position * movementSpeed);
-                this.isMoving = true;
-            }
-        
-        }
-        if(Input.GetKeyDown(KeyCode.DownArrow) && this.isMoving == false)
-        {
-            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
-            if(currentRoom.hasExit("south"))
-            {
-                currentRoom.takeExit(MasterData.p, "south");
-                this.rb.AddForce(this.southExit.transform.position * movementSpeed);
-                this.isMoving = true;
-            }
-            
-        }
-        if(Input.GetKeyDown(KeyCode.LeftArrow) && this.isMoving == false)
-        {
-            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
-            if(currentRoom.hasExit("west"))
-            {
-                currentRoom.takeExit(MasterData.p, "west");
-                this.rb.AddForce(this.westExit.transform.position * movementSpeed);
-                this.isMoving = true;
-            }
-            
-        }
-        if(Input.GetKeyDown(KeyCode.RightArrow) && this.isMoving == false)
-        {
-            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
-            if(currentRoom.hasExit("east"))
-            {
-                currentRoom.takeExit(MasterData.p, "east");
-                this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
-                this.isMoving = true;
-            }
-            
-        }
-        
-    }
+    
     private void updateExits()
     {
         Room currentRoom = MasterData.p.getCurrentRoom();
@@ -186,4 +136,56 @@ public class PlayerController : MonoBehaviour
                 MasterData.isExiting = true;
             }
         }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Room currentRoom = MasterData.p.getCurrentRoom();
+
+        if(Input.GetKeyDown(KeyCode.UpArrow) && this.isMoving == false)
+        {
+            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            if(currentRoom.hasExit("north"))
+            {
+                currentRoom.takeExit(MasterData.p, "north");
+                this.rb.AddForce(this.northExit.transform.position * movementSpeed);
+                this.isMoving = true;
+            }
+        
+        }
+        if(Input.GetKeyDown(KeyCode.DownArrow) && this.isMoving == false)
+        {
+            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            if(currentRoom.hasExit("south"))
+            {
+                currentRoom.takeExit(MasterData.p, "south");
+                this.rb.AddForce(this.southExit.transform.position * movementSpeed);
+                this.isMoving = true;
+            }
+            
+        }
+        if(Input.GetKeyDown(KeyCode.LeftArrow) && this.isMoving == false)
+        {
+            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            if(currentRoom.hasExit("west"))
+            {
+                currentRoom.takeExit(MasterData.p, "west");
+                this.rb.AddForce(this.westExit.transform.position * movementSpeed);
+                this.isMoving = true;
+            }
+            
+        }
+        if(Input.GetKeyDown(KeyCode.RightArrow) && this.isMoving == false)
+        {
+            //this.rb.transform.position = new Vector3(0f, 0f, 0f);
+            if(currentRoom.hasExit("east"))
+            {
+                currentRoom.takeExit(MasterData.p, "east");
+                this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
+                this.isMoving = true;
+            }
+            
+        }
+        
+    }
 }
