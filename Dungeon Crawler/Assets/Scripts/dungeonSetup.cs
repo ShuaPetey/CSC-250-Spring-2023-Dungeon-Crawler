@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class dungeonSetup : MonoBehaviour
 {
-    public GameObject northExit;
-    public GameObject southExit;
-    public GameObject eastExit;
-    public GameObject westExit; 
-
+    public GameObject northExit, southExit, eastExit, westExit;
     public bool northOn, southOn, eastOn, westOn; // can define multiple of same type this way
     // Start is called before the first frame update
     

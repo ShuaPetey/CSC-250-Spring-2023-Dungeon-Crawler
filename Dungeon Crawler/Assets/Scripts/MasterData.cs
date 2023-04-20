@@ -6,8 +6,7 @@ public class MasterData
     private static bool isDungeonSetup = false;
     public static Dungeon cs = null;
     public static Player p = null;
-    
-    
+
     public static void setupDungeon()
     {
         if(MasterData.isDungeonSetup == false)
@@ -18,9 +17,6 @@ public class MasterData
 		    MasterData.p = new Player("Mike");
 		    MasterData.cs.addPlayer(p);
             MasterData.isDungeonSetup = true;
-
-            
         }
-         
     }
 }
