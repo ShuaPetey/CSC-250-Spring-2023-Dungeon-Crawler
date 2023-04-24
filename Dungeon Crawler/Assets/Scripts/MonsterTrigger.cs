@@ -10,7 +10,7 @@ public class MonsterTrigger : MonoBehaviour
   
    private void onTriggerEnter(Collider other)
    {
-       while(this.enableFights && Inhabitant.hp <= 0)
+       while(this.enableFights)
        {
            int chanceToFight = Random.Range(1,100);
            print("Entered Monster Fight!!! - " + chanceToFight);
@@ -20,29 +20,8 @@ public class MonsterTrigger : MonoBehaviour
               SceneManager.LoadScene("FightScene");
              
           
-          if(Player.damage >= Monster.ac)
-          {
-              //we hit the target and do damage
-              
-              Monster.hp = Monster.hp - Inhabitant.damage;
-              if(Monster.hp <= 0)
-              {
-                  
-                  //we are done fighting how do we get out?
-                  SceneManager.LoadScene("DungeonRoom");
-              }
-          }
-          else if(Monster.damage >= Player.ac)
-          {
-              Player.hp = Player.hp - Inhabitant.damage;
-              if(Player.hp <= 0)
-              {
-                  
-                  //we are done fighting how do we get out?
-                  SceneManager.LoadScene("DungeonRoom");
-              }
-          }
-          }
+           
+           }
            else
            {
               print("No Monsters Found!");
