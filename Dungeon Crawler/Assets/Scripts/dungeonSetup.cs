@@ -10,7 +10,7 @@ public class dungeonSetup : MonoBehaviour
     
     void Start()
     {
-        MasterData.setupDungeon();
+        
         /*
         if(northOn == false)
         {

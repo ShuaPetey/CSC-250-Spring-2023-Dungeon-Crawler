@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MasterData.setupDungeon();
         this.updateExits();
 
         this.rb = this.GetComponent<Rigidbody>();
@@ -24,22 +25,22 @@ public class PlayerController : MonoBehaviour
             if(MasterData.whereDidIComeFrom.Equals("north"))
             {
                 this.gameObject.transform.position = this.southExit.transform.position;
-                this.rb.AddForce(Vector3.forward * 150.0f);
+                this.rb.AddForce(Vector3.back * 150.0f);
             }
             else if (MasterData.whereDidIComeFrom.Equals("south"))
             {
                 this.gameObject.transform.position = this.northExit.transform.position;
-                this.rb.AddForce(Vector3.back * 150.0f);
+                this.rb.AddForce(Vector3.forward * 150.0f);
             }
             else if (MasterData.whereDidIComeFrom.Equals("west"))
             {
                 this.gameObject.transform.position = this.eastExit.transform.position;
-                this.rb.AddForce(Vector3.left * 150.0f);
+                this.rb.AddForce(Vector3.right * 150.0f);
             }
             else if (MasterData.whereDidIComeFrom.Equals("east"))
             {
                 this.gameObject.transform.position = this.westExit.transform.position;
-                this.rb.AddForce(Vector3.right * 150.0f);
+                this.rb.AddForce(Vector3.left * 150.0f);
             }
         }
     }

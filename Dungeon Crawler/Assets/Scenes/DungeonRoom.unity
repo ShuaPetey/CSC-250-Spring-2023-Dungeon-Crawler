@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f1e6c599ac6a445a55ade285b2822d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableFights: 1
+  chanceToGetIntoFight: 100
 --- !u!65 &102419880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -226,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102419878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.3202877, z: 2.12}
+  m_LocalPosition: {x: -0.05, y: 0.87, z: 2.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -363,6 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f1e6c599ac6a445a55ade285b2822d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableFights: 1
+  chanceToGetIntoFight: 100
 --- !u!65 &223469599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -434,7 +438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223469597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.14, y: -0.3202877, z: -0.053834915}
+  m_LocalPosition: {x: 2.14, y: 0.6, z: -0.053834915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -579,7 +583,7 @@ MonoBehaviour:
   eastStart: {fileID: 1210509062}
   northStart: {fileID: 2096612857}
   southStart: {fileID: 1717707325}
-  movementSpeed: 40
+  movementSpeed: 65
 --- !u!54 &617707066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1109,6 +1113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f1e6c599ac6a445a55ade285b2822d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableFights: 1
+  chanceToGetIntoFight: 100
 --- !u!65 &1191002692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1180,7 +1186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191002690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.3202877, z: -3.01}
+  m_LocalPosition: {x: -0.05, y: 0.59, z: -3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1228,6 +1234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1489355765}
   - component: {fileID: 1489355764}
+  - component: {fileID: 1489355766}
   m_Layer: 0
   m_Name: Center
   m_TagString: Center
@@ -1263,6 +1270,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489355766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489355763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a874b072c30818b4c8229c7cd15cae4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 617707064}
 --- !u!1 &1621920994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f1e6c599ac6a445a55ade285b2822d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableFights: 1
+  chanceToGetIntoFight: 100
 --- !u!65 &1680050182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1420,7 +1442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680050180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.58, y: -0.3202877, z: -0.053834915}
+  m_LocalPosition: {x: -2.58, y: 0.57, z: -0.053834915}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
