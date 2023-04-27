@@ -22,5 +22,25 @@ public class Inhabitant
         s = s + " - " + this.hp + " / " + this.ac + " / " + this.damage;
         return s;
      }
+
+     public int getAC()
+     {
+        return this.ac;
+     }
+
+     public int getDamage()
+     {
+        return this.damage;
+     }
+
+     public void takeDamage(int damage)
+     {
+        this.hp = this.hp - damage;
+     }
+
+     public bool isDead()
+     {
+        return this.hp <= 0;
+     }
 }
 

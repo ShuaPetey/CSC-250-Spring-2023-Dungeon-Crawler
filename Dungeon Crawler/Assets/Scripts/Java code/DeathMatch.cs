@@ -12,7 +12,9 @@ public class DeathMatch
     private float attackMoveDistance = 2.5f;
     private Vector3 attackerOriginalPosition;
     private Inhabitant currentAttacker;
+    private Inhabitant currentTarget;
     private GameObject currentAttackerGO;
+    private GameObject currentTargetGO;
     private MonoBehaviour refereeInstance;
 
     public DeathMatch(Inhabitant dude1, Inhabitant dude2, GameObject dude1GO, GameObject dude2GO, MonoBehaviour refereeInstance)
@@ -22,7 +24,9 @@ public class DeathMatch
         this.dude1GO = dude1GO;
         this.dude2GO = dude2GO;
         this.currentAttacker = this.dude1;
+        this.currentTarget = this.dude2;
         this.currentAttackerGO = this.dude1GO;
+        this.currentTargetGO = this.dude2GO;
         this.refereeInstance = refereeInstance;
     }
 
@@ -35,29 +39,54 @@ public class DeathMatch
 
         yield return new WaitForSeconds(1.5f);
 
+        //try to do damage here
+        if(Dice.roll(20) >= this.currentTarget.getAC())
+        {
+            this.currentTarget.takeDamage(this.currentAttacker.getDamage());
+        }
+
         this.currRigidBodyOfAttacker.MovePosition(originalPosition);
+
+        yield return new WaitForSeconds(1.5f);
+
+        ((RefereeController)this.refereeInstance).updateScore();
+
+        if(this.currentTarget.isDead())
+        {
+            //what happens when fight is over?
+        }
+        else
+        {
+            this.fight();
+        }
     }
 
     public void fight()
     {
-        /*
-        while(true)
-        {
+        
+        //while(true)
+        //{
             this.attackerOriginalPosition = this.currentAttackerGO.transform.position;
-            this.currRigidBodyOfAttacker = this.currentAttackerGO.GetComponent<RigidBody>();
+            this.currRigidBodyOfAttacker = this.currentAttackerGO.GetComponent<Rigidbody>();
             this.attackMoveDistance *= -1;
 
             if(this.currentAttackerGO == this.dude1GO)
             {
                 this.currentAttackerGO = this.dude2GO;
+                this.currentAttacker = this.dude2;
+                this.currentTarget = this.dude1;
+                this.currentTargetGO = this.dude1GO;
             }
             else
             {
                 this.currentAttackerGO = this.dude1GO;
+                this.currentAttacker = this.dude1;
+                this.currentTarget = this.dude2;
+                this.currentTargetGO = this.dude2GO;
             }
             this.refereeInstance.StartCoroutine(MoveObjectRoutine());
-        }
-        */
+        //}
+        
 
 
     }
