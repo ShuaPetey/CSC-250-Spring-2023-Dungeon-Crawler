@@ -53,7 +53,8 @@ public class DeathMatch
 
         if(this.currentTarget.isDead())
         {
-            //what happens when fight is over?
+            this.currentTargetGO.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+            this.currRigidBodyOfAttacker.AddForce(Vector3.up * 40.0f);
         }
         else
         {
