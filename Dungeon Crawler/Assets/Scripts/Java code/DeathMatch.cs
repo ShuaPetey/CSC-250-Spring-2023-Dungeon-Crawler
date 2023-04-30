@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeathMatch 
 {
@@ -30,6 +31,22 @@ public class DeathMatch
         this.refereeInstance = refereeInstance;
     }
 
+    private IEnumerator JumpCoroutine()
+    {
+        float duration = 60f;
+        float speed = 5f;
+        float startTime = Time.time;
+        Vector3 startPosition = this.currentAttackerGO.transform.position;
+
+        while(Time.time - startTime < duration)
+        {
+            float newY = startPosition.y + Mathf.Sin((Time.time - startTime) *speed) * .5f;
+            this.currentAttackerGO.transform.position = new Vector3(this.currentAttackerGO.transform.position.x, newY, this.currentAttackerGO.transform.position.z);
+
+            yield return null;
+        }
+    }
+
     IEnumerator MoveObjectRoutine()
     {
         Vector3 originalPosition = this.attackerOriginalPosition;
@@ -53,8 +70,25 @@ public class DeathMatch
 
         if(this.currentTarget.isDead())
         {
-            this.currentTargetGO.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-            this.currRigidBodyOfAttacker.AddForce(Vector3.up * 40.0f);
+            MasterData.shouldFollowRotation = true;
+
+            this.currentTargetGO.transform.Rotate(new Vector3(90, 0, 0));
+            
+            this.refereeInstance.StartCoroutine(JumpCoroutine());
+
+            if(this.currentAttackerGO == this.dude1GO)
+            {
+                ((RefereeController)this.refereeInstance).playWinnerMusic();
+                yield return new WaitForSeconds(6.0f);
+                SceneManager.LoadScene("DungeonRoom");
+            }
+            else
+            {
+                //my music is on unity side here
+                yield return new WaitForSeconds(5.0f);
+                SceneManager.LoadScene("GameOver");
+            }
+            
         }
         else
         {

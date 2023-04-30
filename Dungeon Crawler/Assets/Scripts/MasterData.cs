@@ -11,6 +11,7 @@ public class MasterData
     public static Dungeon cs = null;
     public static Player p = null;
     public static GameObject musicLooper = null;
+    public static bool shouldFollowRotation = false;
 
     public static void setupDungeon()
     {
