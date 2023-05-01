@@ -80,22 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Exit") && MasterData.isExiting)
         {
-            if(other.gameObject == this.northExit)
-            {
-                MasterData.whereDidIComeFrom = "north";
-            }
-            else if (other.gameObject == this.southExit)
-            {
-                MasterData.whereDidIComeFrom = "south";
-            }
-            else if (other.gameObject == this.eastExit)
-            {
-                MasterData.whereDidIComeFrom = "east";
-            }
-            else if (other.gameObject == this.westExit)
-            {
-                MasterData.whereDidIComeFrom = "west";
-            }
+            MasterData.canGetIntoFight = true;
             MasterData.isExiting = false;
             SceneManager.LoadScene("DungeonRoom");
         }
@@ -115,6 +100,7 @@ public class PlayerController : MonoBehaviour
             if(currentRoom.hasExit("north"))
             {
                 currentRoom.takeExit(MasterData.p, "north");
+                MasterData.whereDidIComeFrom = "north";
                 this.rb.AddForce(this.northExit.transform.position * movementSpeed);
                 this.isMoving = true;
             }
@@ -124,6 +110,7 @@ public class PlayerController : MonoBehaviour
             if (currentRoom.hasExit("west"))
             {
                 currentRoom.takeExit(MasterData.p, "west");
+                MasterData.whereDidIComeFrom = "west";
                 this.rb.AddForce(this.westExit.transform.position * movementSpeed);
                 this.isMoving = true;
             }
@@ -133,6 +120,7 @@ public class PlayerController : MonoBehaviour
             if (currentRoom.hasExit("east"))
             {
                 currentRoom.takeExit(MasterData.p, "east");
+                MasterData.whereDidIComeFrom = "east";
                 this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
                 this.isMoving = true;
             }
@@ -142,6 +130,7 @@ public class PlayerController : MonoBehaviour
             if (currentRoom.hasExit("south"))
             {
                 currentRoom.takeExit(MasterData.p, "south");
+                MasterData.whereDidIComeFrom = "south";
                 this.rb.AddForce(this.southExit.transform.position * movementSpeed);
                 this.isMoving = true;
             }

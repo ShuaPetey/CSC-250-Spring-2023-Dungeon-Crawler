@@ -4,7 +4,8 @@ public class Player : Inhabitant
     
     public Player(string name) : base(name)
     {
-       
+       this.ac = 100;
+       this.damage = 100;
     }
     
     public Room getCurrentRoom()
