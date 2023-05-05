@@ -10,12 +10,13 @@ public class MonsterTrigger : MonoBehaviour
   
    private void OnTriggerEnter(Collider other)
    {
-       if(this.enableFights)
+       if(this.enableFights && MasterData.canGetIntoFight)
        {
            int chanceToFight = Random.Range(1, 100);
           
            if(chanceToFight <= this.chanceToGetIntoFight)
            {
+              MasterData.canGetIntoFight = false;
               SceneManager.LoadScene("FightScene");
            }
            else

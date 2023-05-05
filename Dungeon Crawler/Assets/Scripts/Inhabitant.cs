@@ -6,14 +6,16 @@ public class Inhabitant
     protected int ac;
     protected int damage;
     protected string name;
+    protected int maxHP;
 
     public Inhabitant(string name)
     {
         this.name = name;
         Random r = new Random();
         this.hp = r.Next(10,21);
-        this.ac = r.Next(10,18) - 10;
-        this.damage = r.Next(1,6) + 5;
+        this.maxHP = this.hp;
+        this.ac = r.Next(10,18);
+        this.damage = r.Next(1,6);
     }
 
      public string getData()
@@ -42,5 +44,15 @@ public class Inhabitant
      {
         return this.hp <= 0;
      }
+
+     public void healHP(int amount)
+     {
+        this.hp += amount;
+        if(this.hp > this.maxHP)
+        {
+           this.hp = this.maxHP;
+        }
+     }
+
 }
 

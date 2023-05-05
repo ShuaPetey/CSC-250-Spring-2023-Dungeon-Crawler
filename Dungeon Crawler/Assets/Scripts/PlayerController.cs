@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public GameObject northExit, southExit, eastExit, westExit;
     public GameObject westStart, eastStart, northStart, southStart;
+    public GameObject cube, cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9;
     public float movementSpeed = 40.0f;
     private bool isMoving;
 
@@ -43,6 +44,56 @@ public class PlayerController : MonoBehaviour
                 this.rb.AddForce(Vector3.left * 150.0f);
             }
         }
+        StartCoroutine(PlayerHeal());
+        if(MasterData.p.hp >= 1)
+        {
+            this.cube9.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 2)
+        {
+            this.cube8.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 3)
+        {
+            this.cube7.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 4)
+        {
+            this.cube6.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 5)
+        {
+            this.cube5.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 6)
+        {
+            this.cube4.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 7)
+        {
+            this.cube3.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 8)
+        {
+            this.cube2.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 9)
+        {
+            this.cube1.SetActive(true);
+        }
+        else if(MasterData.p.hp >= 10)
+        {
+            this.cube.SetActive(true);
+        }
+
+
+    }
+
+    IEnumerator PlayerHeal()
+    {
+        yield return new WaitForSeconds(3.0f);
+        MasterData.p.healHP(1);
+        StartCoroutine(PlayerHeal());
     }
 
     private void updateExits()
@@ -70,6 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Center"))
         {
+            MasterData.canGetIntoFight = true;
             this.rb.velocity = Vector3.zero;
             this.rb.Sleep();
             //this.rb.angularVelocity = Vector3.zero;
@@ -80,7 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Exit") && MasterData.isExiting)
         {
-            MasterData.canGetIntoFight = true;
+            //MasterData.canGetIntoFight = true;
             MasterData.isExiting = false;
             SceneManager.LoadScene("DungeonRoom");
         }

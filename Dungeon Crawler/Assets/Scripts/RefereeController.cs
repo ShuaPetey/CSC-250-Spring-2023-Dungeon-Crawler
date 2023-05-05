@@ -50,7 +50,6 @@ public class RefereeController : MonoBehaviour
 
     IEnumerator DelayBeforeFight()
     {
-        MasterData.canGetIntoFight = false;
         yield return new WaitForSeconds(0.5f);
         this.theMatch.fight();
     }

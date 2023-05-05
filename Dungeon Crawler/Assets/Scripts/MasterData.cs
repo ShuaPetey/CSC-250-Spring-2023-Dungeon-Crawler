@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MasterData 
 {
-    public static bool canGetIntoFight = true;
+    public static bool canGetIntoFight;
     public static bool playerShouldAttack = false;
     public static bool monsterShouldAttack = false;
     public static int count = 0;
